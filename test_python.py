@@ -1,0 +1,1 @@
+print("tiktok rizz party")
