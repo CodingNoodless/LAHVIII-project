@@ -92,9 +92,9 @@ def runMany(model, criterions, optimizers, epochs, indexstart, indexlength):
             if epoch == epochs-1: cv2.waitKey(0)
             cv2.waitKey(1)
 
-        plt.bar(range(indexlength), losses, label='Instance Loss')
-        plt.draw()
-        plt.pause(0.01)
+        # plt.plot(range(indexlength), losses, label='Instance Loss')
+        # plt.draw()
+        # plt.pause(0.01)
 
         totallosses.append(losses)
 
@@ -145,13 +145,14 @@ index = 0
 
 # blur = load_and_preprocess_image(getBlurry(index), (25, 25))
 # clear = load_and_preprocess_image(getClear(index), finalsize)
-epochs = 50
+epochs = 60
 # lose = runOne(model, criterion, optimizer, epochs, blur, clear)
 
 plt.xlabel('Image')
 plt.ylabel('Loss')
 plt.title('Losses')
-loseMany = runMany(model, criterion, optimizer, epochs, 0, 15)
+loseMany = runMany(model, criterion, optimizer, epochs, 5487, 1)
+# 5487
 print(loseMany)
 
 plt.plot(range(1, epochs + 1), loseMany, label='Training Loss')

@@ -59,7 +59,7 @@ def upsample(inputs, features, scale=10):
 # upsampled block
 
 class deCNN(nn.Module):
-    def __init__(self, scale, features=64, hidden_layers=16):
+    def __init__(self, scale, features=64, hidden_layers=20):
         super(deCNN, self).__init__()
         layers = []
         # initial conv layer, 3 channels for H, S, V
@@ -89,6 +89,6 @@ class SuperResolutionLoss(nn.Module):
 
     def forward(self, output, target):
         target_scaled = F.interpolate(target, size=output.shape[2:], mode='bilinear', align_corners=False)
-        loss = F.mse_loss(output, target_scaled)
+        loss = F.huber_loss(output, target_scaled)
 
         return loss
