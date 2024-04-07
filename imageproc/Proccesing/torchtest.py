@@ -1,12 +1,9 @@
 import numpy as np
-import torch
 import cv2
-import tarfile
 import os
-import glob
 from PIL import Image
 
-from imageproc.archive.ConvolutionalHandler import CNN
+from imageproc.Proccesing.ConvolutionalHandler import CNN
 
 
 def cv2disp(name, image, xpos, ypos):
@@ -14,7 +11,7 @@ def cv2disp(name, image, xpos, ypos):
     cv2.moveWindow(name, xpos, ypos)
 
 def getBlurry(index):
-    folder_dir = "C:/Users/kaide/OneDrive/Desktop/vulcan type shit/vulcanfinal/betterproj/imageproc/archive/lowres"
+    folder_dir = "/imageproc/archive/lowres"
     image = os.listdir(folder_dir)[index]
     pil_image = Image\
         .open("C:/Users/kaide/OneDrive/Desktop/vulcan type ""shit/vulcanfinal/betterproj/imageproc/archive/lowres/" + image)\
@@ -24,7 +21,7 @@ def getBlurry(index):
     open_cv_image = open_cv_image[:, :, ::-1].copy()
     return open_cv_image
 def getClear(index):
-    folder_dir = "C:/Users/kaide/OneDrive/Desktop/vulcan type shit/vulcanfinal/betterproj/imageproc/archive/clear"
+    folder_dir = "/imageproc/archive/clear"
     image = os.listdir(folder_dir)[index]
     pil_image = Image.open("C:/Users/kaide/OneDrive/Desktop/vulcan type "
                            "shit/vulcanfinal/betterproj/imageproc/archive/clear/" + image).convert('HSV')

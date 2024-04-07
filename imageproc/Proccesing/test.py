@@ -16,7 +16,7 @@ from PIL import Image
 #         if ".jpg" in member.name:
 #             t.extract(member, "Extracted_Images")
 #
-folder_dir = "C:/Users/kaide/OneDrive/Desktop/vulcan type shit/vulcanfinal/betterproj/imageproc/archive/clear"
+folder_dir = "/imageproc/archive/clear"
 size = 50,50
 for image in os.listdir(folder_dir):
     print("C:/Users/kaide/OneDrive/Desktop/vulcan type shit/vulcanfinal/betterproj/imageproc/archive/clear/" + image)
