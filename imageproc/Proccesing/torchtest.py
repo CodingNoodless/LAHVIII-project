@@ -151,7 +151,7 @@ epochs = 60
 plt.xlabel('Image')
 plt.ylabel('Loss')
 plt.title('Losses')
-loseMany = runMany(model, criterion, optimizer, epochs, 5487, 1)
+loseMany = runMany(model, criterion, optimizer, epochs, 600, 3) #15 goated
 # 5487
 print(loseMany)
 
